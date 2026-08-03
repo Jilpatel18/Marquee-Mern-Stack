@@ -85,12 +85,23 @@
             cursor: pointer;
             background: none;
         }
+        .up{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* background-color: aqua; */
+        }
     </style>
 </head>
 
 <body>
     <div id="drawing-board"></div>
-
+    <div class="up">
+        <p class="text">Change Theme : </p>
+        <button class="black" style="background-color: black;">Dark</button>
+        <button class="light" style="background-color: white; color: black;">Light</button>
+        <button class="bndw" style="background-color: grey;">Black and White</button>
+    </div>
     <div class="controls">
         <button id="clear-board">Clear</button>
 
@@ -105,6 +116,7 @@
         </div>
     </div>
     <script>
+        const body = document.body
         const board = document.getElementById("drawing-board");
         const clear = document.getElementById("clear-board");
 
@@ -121,13 +133,12 @@
         board.onmousemove = function (e) {
             if (mouseDown) {
                 let point = document.createElement("div");
+                
 
                 point.className = "drawing";
                 point.style.backgroundColor = brushColor
                 point.style.width = brushsize + "px"
                 point.style.height = brushsize + "px"
-                // point.style.left = (e.offsetX - brushsize / 2) + "px"
-                // point.style.top = (e.offsetY - brushsize / 2) + "px"
                 point.style.left = (e.offsetX ) + "px"
                 point.style.top = (e.offsetY ) + "px"
                 board.appendChild(point);
@@ -144,9 +155,39 @@
         }
         const colorpicker = document.getElementById("colorPicker")
         let brushColor = colorpicker.value
-        colorpicker.addEventListener("change",() =>{
-            brushColor = colorpicker.value
+        colorpicker.addEventListener("input",() =>{
+            brushColor = colorpicker.value  
+            const drawings = document.querySelectorAll('.drawing')
+            drawings.forEach(point=>{
+                point.style.backgroundColor=brushColor
+            })
         })
+        const dark = document.querySelector('.black').addEventListener('click', (e) => {
+            let ele = document.getElementsByClassName('drawing')
+            for(let i =0;i<ele.length;i++){
+                ele[i].style.backgroundColor="black"
+            }
+            body.style.backgroundColor="black"
+            body.style.filter="none"
+            
+        })
+        const bnw = document.querySelector('.bndw').addEventListener('click', (e) => {
+            let ele = document.getElementsByClassName('drawing')
+            for(let i =0;i<ele.length;i++){
+                ele[i].style.backgroundColor="grey"
+            }
+            body.style.backgroundColor="grey"
+            body.style.filter="grayscale(100%)"
+        })
+        const white = document.querySelector('.light').addEventListener('click', (e) => {
+            let ele = document.getElementsByClassName('drawing')
+            for(let i =0;i<ele.length;i++){
+                ele[i].style.backgroundColor="white"
+            }
+            body.style.backgroundColor="pink"
+        })
+
+
 
 
     </script>

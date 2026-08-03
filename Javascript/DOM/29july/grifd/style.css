@@ -27,7 +27,7 @@ body{
 .list > div:hover{
     outline: 2px solid blueviolet;
     outline-offset: -2px;
-    transform: translateY(-5px) scale(1.5);
+    transform: translateY(-5px) scale(1.1);
     animation-duration: 30000ms;
     animation-delay: 20000ms;
 }

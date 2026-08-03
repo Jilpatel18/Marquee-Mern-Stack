@@ -153,7 +153,7 @@ products.map((item) => {
                 <p class="brand">Brand: ${item.brand}</p>
 
                 <div class="price">
-                    £ + ${item.price}
+                     ${item.price} +rs  
                 </div>
 
                 <p class="quantity">
