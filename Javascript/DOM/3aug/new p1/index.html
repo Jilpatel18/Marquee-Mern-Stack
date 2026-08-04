@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .items {
+        width: 60%;
+        height: 50px;
+        margin: 0 auto;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+      }
+      /* .items-1 {
+        background-color: salmon;
+      } */
+
+      /* .items-2 {
+        background-color: rgb(12, 223, 139);
+      } */
+      #container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(500px, 1fr));
+        gap: 2rem;
+        grid-auto-rows: 500px;
+      }
+      .containers {
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+      .containers:nth-child(1) {
+        background-color: rgb(202, 207, 207);
+      }
+      .containers:nth-child(2) {
+        background-color: azure;
+      }
+      .dragging {
+        opacity: 0.5;
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="containers">
+        <div class="items items-1 draggables" draggable="true"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIY9ORGX5296CZhbI2VoMU6R1xZB4TzQ-psx3Dol5TqQ&s=10" alt="" height="100px"></div>
+        <div class="items items-1 draggables" draggable="true"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh1a4ffC3HUtzG6usJKTzws3huEnnwmHNFnVjxLOx7QA&s=10" alt=""  height="100px"></div>
+        <div class="items items-1 draggables" draggable="true"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK7b6GThaapcH90H9wpl-0bLoKZzxfFSm_kIWdx9bd_g&s=10" alt=""  height="100px"></div>
+      </div>
+      <div class="containers">
+        <div class="items items-2 draggables" draggable="true"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiMSxzmTs_Na6_e2WfjEDBuMB6j7dj3ckKbTgiVTW1QA&s=10" alt=""  height="100px"></div>
+        <div class="items items-2 draggables" draggable="true"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9OMRjM0TF-ArFVdUwtJaqzdOUMreKvgyksKOTnQJf_A&s=10" alt=""  height="100px"></div>
+        <div class="items items-2 draggables" draggable="true"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk9BgZlA07NyTstqAIOhcY7PsLpShFCTVty8bCXQz-cA&s=10" alt="" height="100px"></div>
+      </div>
+    </div>
+
+    <div
+      class="containers"
+      style="background-color: bisque; width: 300px; height: 300px"
+    ></div>
+    <script src="scryt.js"></script>
+  </body>
+</html>
